@@ -1,4 +1,4 @@
-console.log('Starting');
+console.log('Computer says no.');
 
 var  ledToggle, pressCount;
 //provision the gpio pins 22 for the led output and 17 for the button input
