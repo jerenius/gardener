@@ -32,6 +32,4 @@ RUN apt-get update \
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 
-CMD modprobe i2c-dev
-
-CMD ["python", "/gpio_example.py"]
+CMD ["bash", "/start.sh"]
