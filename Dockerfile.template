@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
 
 #switch on systemd init system in container
 ENV INITSYSTEM on
@@ -6,6 +6,27 @@ ENV INITSYSTEM on
 # pip install python deps from requirements.txt
 # For caching until requirements.txt changes
 COPY content/ /
+
+RUN apt-get update \
+ && apt-get install -yq \
+ apt-transport-https \
+ wget \
+ nano \
+ curl \
+ apt-utils \
+ python-pip \
+ python-smbus \
+ i2c-tools  \
+ supervisor \
+ git \
+ build-essential \
+ python-dev \
+ lighttpd \
+ php7.0-cgi \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
+
 RUN pip install -r /requirements.txt
 
 COPY . /usr/src/app
