@@ -1,25 +1,14 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-node:9-stretch-build
-
-#FROM resin/%%RESIN_MACHINE_NAME%%-python
+FROM resin/%%RESIN_MACHINE_NAME%%-python
 
 #switch on systemd init system in container
 ENV INITSYSTEM on
 
-COPY content/ /
-
-RUN apt-get update \
- && apt-get install -yq \
- python-pip \
- python-smbus \
- python-dev \
- i2c-tools  \
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/*
-
-
-
-
+# pip install python deps from requirements.txt
+# For caching until requirements.txt changes
+COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
+COPY . /usr/src/app
+WORKDIR /usr/src/app
 
 CMD ["python", "gpio_example.py"]
