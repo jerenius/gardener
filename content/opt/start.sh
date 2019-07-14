@@ -1,0 +1,6 @@
+#!bin/bash
+
+
+npm start
+
+
