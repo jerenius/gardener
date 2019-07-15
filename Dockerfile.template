@@ -12,7 +12,7 @@ RUN apt-get update \
  apt-utils \
  build-essential \
  curl \
- i2c-tools  \
+ i2c-tools \
  nano \
  python-dev \
  python-pip \
@@ -21,6 +21,10 @@ RUN apt-get update \
  python-smbus \
  supervisor \
  wget \
+ && wget --quiet -O - https://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | apt-key add - \
+ && wget http://repo.mosquitto.org/debian/mosquitto-stretch.list -O /etc/apt/sources.list.d/mosquitto.list \
+ && apt-get update \
+ && apt-get install -yq mosquitto mosquitto-clients\
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
