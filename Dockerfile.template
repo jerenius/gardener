@@ -10,16 +10,12 @@ COPY content/ /
 RUN apt-get update \
  && apt-get install -yq \
  apt-transport-https \
- wget \
  nano \
- curl \
  apt-utils \
  python-pip \
  python-smbus \
  i2c-tools  \
  supervisor \
- git \
- build-essential \
  python-dev \
  python-rpi.gpio \
  python3-rpi.gpio \
