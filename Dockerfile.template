@@ -4,7 +4,6 @@ ENV INITSYSTEM on
 
 COPY content/ /
 
-COPY . /usr/src/app
 WORKDIR /usr/src/app
 
 RUN apt-get update \
