@@ -1,11 +1,11 @@
 FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
 
-#switch on systemd init system in container
 ENV INITSYSTEM on
 
-# pip install python deps from requirements.txt
-# For caching until requirements.txt changes
 COPY content/ /
+
+COPY . /usr/src/app
+WORKDIR /usr/src/app
 
 RUN apt-get update \
  && apt-get install -yq \
@@ -31,7 +31,8 @@ RUN JOBS=MAX npm install -g \
   node-red-contrib-resinio \
   node-red-admin \
   node-red-contrib-simpletime \
- && npm install --unsafe-perm node-red-contrib-i2c \
+  i2c-bus \
+  bmp180-sensor \
  && rm -rf /tmp/*
 
 RUN pip install --upgrade --no-cache-dir setuptools \
