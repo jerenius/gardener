@@ -38,7 +38,7 @@ RUN JOBS=MAX npm install -g \
   node-red-contrib-google \
   node-red-contrib-persist \
   node-red-contrib-azure-iot-hub \
- && nmp install --unsafe-perm node-red-contrib-i2c \
+ && npm install --unsafe-perm node-red-contrib-i2c \
  && rm -rf /tmp/*
 
 
