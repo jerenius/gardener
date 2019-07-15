@@ -35,9 +35,8 @@ RUN JOBS=MAX npm install -g \
  && npm install --unsafe-perm node-red-contrib-i2c \
  && rm -rf /tmp/*
 
-RUN pip install --upgrade --no-cache-dir \
- setuptools \
- adafruit-bmp
+RUN pip install --upgrade --no-cache-dir setuptools
+ && pip install adafruit-bmp --no-cache-dir
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
