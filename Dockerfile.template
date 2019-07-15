@@ -30,8 +30,6 @@ RUN JOBS=MAX npm install -g \
   node-red-contrib-resinio \
   node-red-admin \
   node-red-contrib-simpletime \
-  i2c-bus \
-  bmp180-sensor \
  && rm -rf /tmp/*
 
 RUN pip install --upgrade --no-cache-dir setuptools \
