@@ -21,8 +21,6 @@ RUN apt-get update \
  git \
  build-essential \
  python-dev \
- lighttpd \
- php7.0-cgi \
  python-rpi.gpio \
  python3-rpi.gpio \
  && apt-get clean \
@@ -37,7 +35,9 @@ RUN JOBS=MAX npm install -g \
  && npm install --unsafe-perm node-red-contrib-i2c \
  && rm -rf /tmp/*
 
-RUN pip --no-cache-dir install setuptools 
+RUN pip install --no-cache-dir \
+ setuptools \
+ adafruit-bmp
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
