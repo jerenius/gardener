@@ -37,7 +37,4 @@ RUN JOBS=MAX npm install -g \
 RUN pip install --upgrade --no-cache-dir setuptools \
  && pip install adafruit-bmp --no-cache-dir
 
-COPY . /usr/src/app
-WORKDIR /usr/src/app
-
 CMD ["bash", "/start.sh"]
