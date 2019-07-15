@@ -23,6 +23,8 @@ RUN apt-get update \
  python-dev \
  lighttpd \
  php7.0-cgi \
+ python-rpi.gpio \
+ python3-rpi.gpio \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -35,9 +37,7 @@ RUN JOBS=MAX npm install -g \
  && npm install --unsafe-perm node-red-contrib-i2c \
  && rm -rf /tmp/*
 
-
-
-#RUN pip install -r /requirements.txt
+RUN pip --no-cache-dir install setuptools 
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
