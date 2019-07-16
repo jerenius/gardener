@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import Adafruit_BMP.BMP085 as BMP085
 import os
 import paho.mqtt.client as mqtt #import the client1
