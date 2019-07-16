@@ -36,8 +36,8 @@ RUN JOBS=MAX npm install -g \
   node-red-contrib-simpletime \
  && rm -rf /tmp/*
 
-RUN pip install --upgrade --no-cache-dir setuptools \
- && pip install --no-cache-dir \
+RUN pip3 install --upgrade --no-cache-dir setuptools \
+ && pip3 install --no-cache-dir \
  adafruit-bmp \
  paho-mqtt
 
