@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#modprobe i2c-dev
+
+ln -sf /usr/bin/python3.5 /usr/bin/python
+
+#node-red --settings /settings.js
 
 
-
-node-red --settings /settings.js
-
+bash
 
