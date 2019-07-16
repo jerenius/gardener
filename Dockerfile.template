@@ -12,6 +12,7 @@ RUN apt-get update \
  apt-utils \
  build-essential \
  curl \
+ cron \
  i2c-tools \
  nano \
  python-dev \
@@ -28,13 +29,13 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-RUN JOBS=MAX npm install -g \
-  uuid \
-  node-red \
-  node-red-contrib-resinio \
-  node-red-admin \
-  node-red-contrib-simpletime \
- && rm -rf /tmp/*
+#RUN JOBS=MAX npm install -g \
+#  uuid \
+#  node-red \
+#  node-red-contrib-resinio \
+#  node-red-admin \
+#  node-red-contrib-simpletime \
+# && rm -rf /tmp/*
 
 RUN pip install --upgrade --no-cache-dir setuptools \
  && pip install adafruit-bmp --no-cache-dir
