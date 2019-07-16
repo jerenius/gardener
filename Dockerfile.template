@@ -24,9 +24,9 @@ RUN apt-get update \
  && wget --quiet -O - https://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | apt-key add - \
  && wget http://repo.mosquitto.org/debian/mosquitto-stretch.list -O /etc/apt/sources.list.d/mosquitto.list \
  && apt-get update \
- && apt-get install -yq mosquitto-clients\
- #&& apt-get clean \
- #&& rm -rf /var/lib/apt/lists/*
+ && apt-get install -yq mosquitto-clients \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN JOBS=MAX npm install -g \
   uuid \
