@@ -2,6 +2,7 @@ FROM balenalib/%%BALENA_MACHINE_NAME%%-node:10-stretch-run
 
 ENV INITSYSTEM on
 
+
 COPY content/ /
 
 WORKDIR /usr/src/app
