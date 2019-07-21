@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-ln -sf /usr/bin/python3.5 /usr/bin/python
+#ln -sf /usr/bin/python3.5 /usr/bin/python
 chmod 755 /usr/src/app/temperature.py
 chmod 755 /usr/src/app/temp-loop.py
 
